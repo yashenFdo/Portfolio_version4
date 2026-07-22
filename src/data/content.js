@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Yashen Fernando',
-  eyebrow: 'Welcome to my portfolio!',
+  eyebrow: 'Welcome to my space!',
   photo: '/yashen.jpg',
   tagline: [
     'IT undergraduate passionate about software engineering, cloud, DevOps, and green technology.',

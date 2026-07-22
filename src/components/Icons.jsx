@@ -159,6 +159,14 @@ export function PenIcon(props) {
   );
 }
 
+export function ArrowUpIcon(props) {
+  return (
+    <svg {...common} {...props}>
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  );
+}
+
 export const SOCIAL_ICONS = {
   github: GitHubIcon,
   linkedin: LinkedInIcon,
