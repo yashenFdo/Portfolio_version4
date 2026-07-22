@@ -25,7 +25,7 @@ export default function Research() {
                   </h3>
                   <div className={styles.authors}>{r.authors}</div>
                   <div className={styles.meta}>
-                    {r.venue} · {r.dates} · {r.status}
+                    {[r.venue, r.dates, r.status].filter(Boolean).join(' · ')}
                   </div>
                   <div className={styles.tags}>
                     {r.topics.map((t) => (

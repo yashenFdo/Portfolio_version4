@@ -187,8 +187,6 @@ export const research = [
     title: 'Tea Plant Disease Identification Using Drone Imagery and Vision-Language Models',
     authors: 'Y. Fernando, H. Jayasundara, N. Sanjeevan',
     venue: 'Final Year Research, University of Vavuniya',
-    dates: 'Oct 2026 — Mar 2027',
-    status: 'Final Year Project',
     topics: ['Computer Vision', 'AI & ML', 'Precision Agriculture'],
     image: '/research/tea.png',
   },
