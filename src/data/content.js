@@ -417,12 +417,12 @@ export const volunteering = {
 };
 
 export const contact = {
-  email: 'hello@yashenfernando.dev',
-  phone: '+94 71 234 5678',
+  email: 'hello@yashensavindu@gmail.com',
+  phone: '+94 711 974 973',
   location: 'Colombo, Sri Lanka',
-  whatsappHref: 'https://wa.me/94712345678',
-  calendarHref: '#',
+  whatsappHref: 'https://wa.me/94711974973',
+  calendarHref: 'calendly.com/yashen',
 };
 
 export const footerBlurb =
-  'Electronic Engineering undergraduate building wearables and interfaces at the intersection of HCI, embedded systems, and AI.';
+  'IT undergraduate passionate about software engineering, cloud, DevOps, and green technology.';
