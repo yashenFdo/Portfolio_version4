@@ -1,0 +1,126 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding: 64px clamp(20px, 5vw, 64px) 32px;
+}
+
+.grid {
+  max-width: var(--content-max);
+  margin: 0 auto 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.brandName {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.brandBlurb {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-faint);
+  max-width: 30ch;
+  margin: 0;
+}
+
+.colTitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.colLink {
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  width: fit-content;
+}
+
+.colLink:hover {
+  color: var(--lime);
+}
+
+.emailLink {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.location {
+  font-size: 14px;
+  color: var(--text-faint);
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.socialIcon:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+.bottomBar {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+.backToTop {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+}
+
+.backToTop:hover {
+  color: var(--lime);
+}

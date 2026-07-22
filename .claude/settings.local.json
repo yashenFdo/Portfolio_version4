@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --max-time 10 \"https://ui-avatars.com/api/?name=IEEE&background=101a30&color=38bdf8&bold=true&size=128&format=svg&length=4\")",
+      "Bash(curl -s --max-time 10 \"https://ui-avatars.com/api/?name=IEEE&background=101a30&color=38bdf8&bold=true&size=128&format=svg\")",
+      "Bash(npx vite *)",
+      "Bash(xargs grep -l \"react-router\\\\|Routes\\\\|Route \")"
+    ]
+  }
+}
