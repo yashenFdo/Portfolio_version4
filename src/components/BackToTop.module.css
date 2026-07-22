@@ -1,4 +1,4 @@
-.button {
+﻿.button {
   position: fixed;
   right: 22px;
   bottom: 22px;
@@ -14,8 +14,8 @@
   color: var(--text);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
   cursor: pointer;
-  animation: fade-in 0.2s ease;
-  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  animation: fade-in 0.2s var(--ease-smooth);
+  transition: transform 0.2s var(--ease-smooth), border-color 0.2s var(--ease-smooth), color 0.2s var(--ease-smooth);
 }
 
 .button:hover {

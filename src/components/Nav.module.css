@@ -1,4 +1,4 @@
-.progress {
+﻿.progress {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   box-shadow: none;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s var(--ease-smooth);
 }
 
 .logo {
@@ -32,7 +32,7 @@
   letter-spacing: -0.01em;
   color: var(--lime);
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s var(--ease-smooth);
   white-space: nowrap;
   background: none;
   border: none;
@@ -68,7 +68,7 @@
   color: var(--text-muted);
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth);
   background: none;
   border-top: none;
   border-left: none;
@@ -96,7 +96,7 @@
   font-weight: 600;
   font-size: 13px;
   white-space: nowrap;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth), background 0.2s var(--ease-smooth);
 }
 
 .resumeBtn:hover {

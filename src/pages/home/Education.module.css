@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   padding: 60px clamp(20px, 5vw, 40px) 100px;
   max-width: var(--content-max);
   margin: 0 auto;
@@ -19,7 +19,7 @@
   margin: 0 -20px;
   border-top: 1px solid var(--border);
   border-radius: 4px;
-  transition: background 0.25s ease;
+  transition: background 0.25s var(--ease-smooth);
 }
 
 .row:last-child {

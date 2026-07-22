@@ -24,11 +24,15 @@ export default function TimelineSection({ id, title, items, alt, collage, statBa
           )}
 
           {typeof collage === 'string' ? (
-            <div className={styles.collage} style={{ backgroundImage: `url(${collage})` }} />
+            <div className={styles.collageWrap}>
+              <div className={styles.collage} style={{ backgroundImage: `url(${collage})` }} />
+            </div>
           ) : (
             collage && (
-              <div className={`${styles.collage} placeholder-stripes`}>
-                <span className="placeholder-label">PHOTO COLLAGE</span>
+              <div className={styles.collageWrap}>
+                <div className={`${styles.collage} placeholder-stripes`}>
+                  <span className="placeholder-label">PHOTO COLLAGE</span>
+                </div>
               </div>
             )
           )}

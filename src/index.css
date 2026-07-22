@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #0b1120;
   --bg-alt: #0d1428;
   --surface: #101a30;
@@ -31,6 +31,8 @@
   --content-max-narrow: 1100px;
   --content-max-case: 1000px;
   --nav-height: 76px;
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
   color-scheme: dark;
 }
@@ -123,7 +125,7 @@ p {
 }
 
 .route-fade {
-  animation: route-fade 0.5s ease;
+  animation: route-fade 0.5s var(--ease-smooth);
 }
 
 @media (prefers-reduced-motion: reduce) {

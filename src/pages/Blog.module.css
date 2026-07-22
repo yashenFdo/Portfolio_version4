@@ -1,4 +1,4 @@
-.wrap {
+﻿.wrap {
   padding: 56px clamp(20px, 5vw, 40px) 100px;
   max-width: var(--content-max);
   margin: 0 auto;
@@ -66,7 +66,7 @@
   background: transparent;
   color: var(--text);
   border: 1px solid var(--border-strong);
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s var(--ease-smooth), background 0.2s var(--ease-smooth), color 0.2s var(--ease-smooth);
 }
 
 .chip:hover {
@@ -89,7 +89,7 @@
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border);
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s var(--ease-smooth), background 0.2s var(--ease-smooth), color 0.2s var(--ease-smooth);
 }
 
 .subChip:hover {
@@ -131,7 +131,7 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth);
 }
 
 .card:hover {
@@ -230,7 +230,7 @@
   border: 1px solid var(--border);
   font-size: 14px;
   font-weight: 600;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s var(--ease-smooth), color 0.2s var(--ease-smooth);
 }
 
 .pageBtn:hover:not(:disabled) {

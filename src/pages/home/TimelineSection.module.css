@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   padding: 60px clamp(20px, 5vw, 40px) 100px;
 }
 
@@ -72,17 +72,34 @@
   color: var(--text-muted);
 }
 
-.collage {
+.collageWrap {
   height: 220px;
   width: 100%;
   border-radius: 16px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+}
+
+.collageWrap:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 20px 44px -20px rgba(56, 189, 248, 0.4);
+}
+
+.collage {
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-  border: 1px solid var(--border);
   background-size: cover;
   background-position: center;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.collageWrap:hover .collage {
+  transform: scale(1.06);
 }
 
 .list {
@@ -99,7 +116,7 @@
   margin: 0 -20px;
   border-top: 1px solid var(--border);
   border-radius: 4px;
-  transition: background 0.25s ease;
+  transition: background 0.25s var(--ease-smooth);
 }
 
 .row:hover {
