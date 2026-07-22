@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import Reveal from '../../components/Reveal';
 import { posts } from '../../data/content';
+import { sortByNewest } from '../../utils/date';
 import shared from './shared.module.css';
 import styles from './WritingTeaser.module.css';
 
 export default function WritingTeaser() {
-  const recent = posts.slice(0, 6);
+  const recent = sortByNewest(posts).slice(0, 6);
   return (
     <section id="writing" className={styles.section}>
       <Reveal>

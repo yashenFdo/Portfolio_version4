@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
 import { posts } from '../data/content';
+import { sortByNewest } from '../utils/date';
 import styles from './Blog.module.css';
 
 const PAGE_SIZE = 6;
+const sortedPosts = sortByNewest(posts);
 const PLATFORMS = ['All', ...new Set(posts.map((p) => p.platform))];
 const TOPICS = ['All', ...new Set(posts.map((p) => p.topic))];
 
@@ -13,7 +15,7 @@ export default function Blog() {
 
   const filtered = useMemo(
     () =>
-      posts.filter(
+      sortedPosts.filter(
         (p) =>
           (platform === 'All' || p.platform === platform) &&
           (topic === 'All' || p.topic === topic)
