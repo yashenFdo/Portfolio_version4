@@ -34,11 +34,11 @@ export const socialsFooter = [
 ];
 
 export const updates = [
-  { date: 'Jul 2026', tag: 'Academic', text: 'Started a research placement studying gesture recognition with low-cost sEMG sensors.' },
-  { date: 'May 2026', tag: 'Professional', text: 'Completed a three-month embedded systems internship building firmware for a wearable health monitor.' },
-  { date: 'Mar 2026', tag: 'Life', text: 'Spent three months at an Australian research lab as a visiting undergraduate researcher.' },
-  { date: 'Jan 2026', tag: 'Academic', text: 'Presented a poster on sensor fusion for on-body devices at a university research symposium.' },
-  { date: 'Nov 2025', tag: 'Professional', text: 'Chaired logistics for a 300-person IEEE student congress as part of the organizing committee.' },
+  { date: 'July 2026', tag: 'Professional', text: 'Chaired the organizing committee of the first-ever industrial visit in my faculty.' },
+  { date: 'July 2026', tag: 'Professional', text: 'Crossed 7K followers on LinkedIn.' },
+  { date: 'June 2026', tag: 'Professional', text: 'Celebrated 60+ events organized across my university journey.' },
+  { date: 'June 2026', tag: 'Academic', text: 'Started publishing research, first abstracts submitted.' },
+  { date: 'Apr 2026', tag: 'Life', text: 'Started reading as a daily habit.' },
 ];
 
 export const quickNav = [
