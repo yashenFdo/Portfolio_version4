@@ -267,7 +267,7 @@ export const posts = [
     excerpt: 'When I started building my Daraz clone using Spring Boot, I spent a lot of time looking through professional GitHub repositories to see how experienced developers structure their projects. ',
     platform: 'Medium',
     topic: 'Software Engineering',
-    date: 'March 2025',
+    date: 'April 2025',
     readTime: '3 min read',
     url: 'https://medium.com/@yashenfernando/why-i-stopped-using-double-in-my-spring-boot-projects-5c79d429f0e2',
     slug: 'a8',
