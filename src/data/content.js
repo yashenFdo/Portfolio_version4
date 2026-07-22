@@ -417,7 +417,7 @@ export const volunteering = {
 };
 
 export const contact = {
-  email: 'hello@yashensavindu@gmail.com',
+  email: 'yashensavindu@gmail.com',
   phone: '+94 711 974 973',
   location: 'Colombo, Sri Lanka',
   whatsappHref: 'https://wa.me/94711974973',
