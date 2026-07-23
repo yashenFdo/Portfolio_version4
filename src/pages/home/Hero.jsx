@@ -13,7 +13,11 @@ export default function Hero() {
   return (
     <section id="home" className={styles.section}>
       <Reveal className={styles.copy}>
-        <div className={styles.eyebrow}>{profile.eyebrow}</div>
+        <div className={styles.availabilityPill}>
+          <span className={styles.pulseDot} />
+          <span>Available for freelance & research collabs</span>
+        </div>
+        
         <h1 className={styles.title}>
           Hi, I&apos;m <span className={styles.name}>{profile.name.split(' ')[0]}</span>
         </h1>
@@ -24,12 +28,20 @@ export default function Hero() {
         </ul>
         <div className={styles.ctaRow}>
           <button className={styles.primaryCta} onClick={() => go('projects')}>
-            View My Work
+            View My Work <span className={styles.btnArrow}>→</span>
           </button>
           <button className={styles.secondaryCta} onClick={() => go('contact')}>
-            Contact Me
+            Contact Me <span className={styles.btnArrow}>→</span>
           </button>
         </div>
+        <a
+          href={profile.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.resumeLink}
+        >
+          Download Resume <span className={styles.resumeArrow}>↓</span>
+        </a>
         <div className={styles.social}>
           {socialsMain.map((s) => {
             const Icon = SOCIAL_ICONS[s.key];

@@ -1,18 +1,29 @@
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--violet);
+  color: var(--cyan);
   margin-bottom: 20px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
 }
 
 .sectionTitle {
   font-family: var(--font-head);
-  font-weight: 600;
-  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 44px);
   letter-spacing: -0.02em;
   margin: 0 0 44px;
+  background: linear-gradient(135deg, var(--text) 40%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sectionHeadRow {

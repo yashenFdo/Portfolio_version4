@@ -1,5 +1,5 @@
-﻿.section {
-  padding: 60px clamp(20px, 5vw, 40px) 100px;
+.section {
+  padding: 80px clamp(20px, 5vw, 40px) 120px;
   max-width: var(--content-max);
   margin: 0 auto;
 }
@@ -9,19 +9,27 @@
   margin-bottom: 48px;
 }
 
+/* ── Bio Card ── */
 .bioCard {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 36px clamp(20px, 4vw, 40px);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  padding: 36px clamp(20px, 4vw, 44px);
+  background: rgba(13, 21, 38, 0.75);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  border-radius: 20px;
   text-align: left;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.bioCard:hover {
+  border-color: rgba(34, 211, 238, 0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
 .paragraph {
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--text-muted);
   margin: 0 0 18px;
 }
@@ -30,12 +38,13 @@
   margin-bottom: 0;
 }
 
+/* ── Skill Marquee ── */
 .marqueeWrap {
-  --marquee-duration: 30s;
+  --marquee-duration: 28s;
   overflow: hidden;
-  margin: 48px 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  margin: 56px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .marqueeTrack {
@@ -43,7 +52,7 @@
   flex-shrink: 0;
   width: max-content;
   will-change: transform;
-  animation: marquee var(--marquee-duration, 30s) linear infinite;
+  animation: marquee var(--marquee-duration, 28s) linear infinite;
 }
 
 .marqueeTrack.reverse {
@@ -61,29 +70,24 @@
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .marqueeTrack {
     animation: none;
   }
-
   .marqueeWrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-
   .marqueeGroup[aria-hidden='true'] {
     display: none;
   }
 }
 
+/* ── Pill ── */
 .pill {
   flex-shrink: 0;
   display: inline-flex;
@@ -92,30 +96,33 @@
   margin-right: 14px;
   padding: 10px 22px 10px 14px;
   border-radius: 20px;
-  background: color-mix(in srgb, var(--pill-accent) 14%, var(--surface));
-  border: 1px solid color-mix(in srgb, var(--pill-accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--pill-accent) 12%, rgba(13,21,38,0.8));
+  border: 1px solid color-mix(in srgb, var(--pill-accent) 35%, transparent);
   color: var(--pill-accent);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
-  transition: transform 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth);
+  transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s, background 0.25s;
+  backdrop-filter: blur(6px);
 }
 
 .pill:hover {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 8px 20px -8px var(--pill-accent);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 28px -8px var(--pill-accent);
+  background: color-mix(in srgb, var(--pill-accent) 20%, rgba(13,21,38,0.9));
 }
 
 .pillLogo {
   width: 22px;
   height: 22px;
   object-fit: contain;
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--pill-accent) 60%, transparent));
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--pill-accent) 70%, transparent));
 }
 
+/* ── Highlights Grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 @media (max-width: 780px) {
@@ -124,35 +131,43 @@
   }
 }
 
+/* ── Card ── */
 .card {
   padding: 28px 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  transition: transform 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth);
+  background: rgba(13, 21, 38, 0.75);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 16px;
+  transition: transform 0.3s var(--ease-smooth), border-color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(8px);
+  height: 100%;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-strong);
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
 
 .cardIcon {
-  color: var(--lime);
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 16px;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cardTitle {
   font-family: var(--font-head);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   margin: 0 0 10px;
+  color: var(--text);
 }
 
 .cardDesc {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text-muted);
   margin: 0;
 }

@@ -1,88 +1,67 @@
-﻿.section {
-  padding: 0 clamp(20px, 5vw, 40px) 40px;
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 880px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.card {
+.floatingNav {
+  position: fixed;
+  top: 50%;
+  right: clamp(10px, 3vw, 40px);
+  transform: translateY(-50%);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 16px;
-  padding: 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  text-align: left;
-  transition: transform 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+  z-index: 100;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-strong);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+@media (max-width: 1200px) {
+  .floatingNav {
+    display: none;
+  }
 }
 
-.icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  flex-shrink: 0;
+.navItem {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--gradient);
-  color: #fff;
+  justify-content: flex-end;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
 }
 
-.body {
-  flex: 1;
-  min-width: 0;
+.label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth), color 0.3s;
 }
 
-.eyebrow {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--violet);
-  margin-bottom: 4px;
+.navItem:hover .label,
+.navItem.active .label {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.title {
-  font-family: var(--font-head);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
+.navItem.active .label {
+  color: var(--cyan);
 }
 
-.arrow {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+.dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  color: var(--lime);
-  font-size: 14px;
+  background: var(--border-strong);
+  transition: transform 0.3s var(--ease-bounce), background 0.3s, box-shadow 0.3s;
+}
+
+.navItem:hover .dot {
+  transform: scale(1.5);
+  background: var(--cyan);
+}
+
+.navItem.active .dot {
+  transform: scale(1.5);
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
 }

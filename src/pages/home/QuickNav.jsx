@@ -1,57 +1,50 @@
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Reveal from '../../components/Reveal';
-import {
-  BriefcaseIcon,
-  GraduationCapIcon,
-  FlaskIcon,
-  CodeIcon,
-  HeartHandshakeIcon,
-  PenIcon,
-} from '../../components/Icons';
-import { scrollToSection } from '../../lib/navigation';
 import { quickNav } from '../../data/content';
+import { scrollToSection } from '../../lib/navigation';
 import styles from './QuickNav.module.css';
-
-const NAV_ICONS = {
-  experience: BriefcaseIcon,
-  education: GraduationCapIcon,
-  research: FlaskIcon,
-  projects: CodeIcon,
-  volunteering: HeartHandshakeIcon,
-  writing: PenIcon,
-};
 
 export default function QuickNav() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -60% 0px' }
+    );
+
+    // Give the DOM a moment to paint the sections
+    setTimeout(() => {
+      quickNav.forEach((item) => {
+        const el = document.getElementById(item.id);
+        if (el) observer.observe(el);
+      });
+    }, 500);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className={styles.section}>
-      <div className={styles.grid}>
-        {quickNav.map((item, i) => {
-          const Icon = NAV_ICONS[item.id];
-          return (
-            <Reveal
-              as="button"
-              key={item.id}
-              delay={(i % 3) * 80}
-              className={styles.card}
-              onClick={() => scrollToSection(navigate, location.pathname, item.id)}
-            >
-              <div className={styles.icon} aria-hidden="true">
-                {Icon && <Icon width={22} height={22} />}
-              </div>
-              <div className={styles.body}>
-                <span className={styles.eyebrow}>{item.eyebrow}</span>
-                <h3 className={styles.title}>{item.title}</h3>
-              </div>
-              <span className={styles.arrow} aria-hidden="true">
-                →
-              </span>
-            </Reveal>
-          );
-        })}
-      </div>
-    </section>
+    <nav className={styles.floatingNav} aria-label="Quick Navigation">
+      {quickNav.map((item) => (
+        <button
+          key={item.id}
+          className={`${styles.navItem} ${activeSection === item.id ? styles.active : ''}`}
+          onClick={() => scrollToSection(navigate, location.pathname, item.id)}
+          aria-label={item.title}
+        >
+          <span className={styles.label}>{item.title}</span>
+          <span className={styles.dot} />
+        </button>
+      ))}
+    </nav>
   );
 }

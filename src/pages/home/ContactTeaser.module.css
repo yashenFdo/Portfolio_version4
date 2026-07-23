@@ -1,76 +1,146 @@
-﻿.section {
-  padding: 80px clamp(20px, 5vw, 40px) 100px;
+.section {
+  position: relative;
+  padding: 100px clamp(20px, 5vw, 40px) 120px;
   max-width: var(--content-max-narrow);
   margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ── Decorative glow ring behind the section ── */
+.glowRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, rgba(34,211,238,0.06) 40%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
-.subtitle {
-  color: var(--text-muted);
-  font-size: 15px;
-  max-width: 52ch;
-  margin: 0 auto 40px;
+/* ── Eyebrow ── */
+.eyebrowRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
+/* ── Heading ── */
+.heading {
+  font-family: var(--font-head);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  line-height: 1.12;
+  color: var(--text);
+}
+
+.headingAccent {
+  display: inline-block;
+  background: linear-gradient(135deg, #a5b4fc 0%, #22d3ee 60%, #67e8f9 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Subtitle ── */
+.subtitle {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0 auto 48px;
+}
+
+/* ── CTA Row ── */
 .ctaRow {
   display: flex;
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .primaryCta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
-  background: var(--lime);
-  color: var(--bg);
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
   font-size: 15px;
-  transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s, filter 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryCta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.primaryCta:hover::before {
+  opacity: 1;
 }
 
 .primaryCta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(34, 211, 238, 0.3);
-  color: var(--bg);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.4);
+  color: #fff;
   text-decoration: none;
+  filter: brightness(1.1);
 }
 
 .secondaryCta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
-  border: 1px solid var(--border-strong);
-  background: none;
+  padding: 15px 32px;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.06);
   color: var(--text);
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 15px;
-  transition: background 0.25s var(--ease-smooth), transform 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth);
+  transition: background 0.3s, transform 0.3s var(--ease-smooth), border-color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(8px);
 }
 
 .secondaryCta:hover {
-  background: rgba(56, 189, 248, 0.1);
-  border-color: var(--lime);
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(34, 211, 238, 0.5);
   transform: translateY(-3px);
   color: var(--text);
   text-decoration: none;
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.2);
 }
 
+/* ── Info Pills ── */
 .pillRow {
   display: flex;
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .pill,
@@ -80,18 +150,23 @@
   gap: 8px;
   padding: 10px 18px;
   border-radius: 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(13, 21, 38, 0.75);
+  border: 1px solid rgba(99, 102, 241, 0.18);
   color: var(--text-muted);
   font-size: 13px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
 
 .pill:hover {
-  border-color: var(--lime);
-  color: var(--text);
+  border-color: rgba(34, 211, 238, 0.4);
+  color: var(--cyan);
   text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 211, 238, 0.1);
 }
 
+/* ── Social Icons ── */
 .social {
   display: flex;
   gap: 12px;
@@ -99,20 +174,23 @@
 }
 
 .socialIcon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(13, 21, 38, 0.75);
+  border: 1px solid rgba(99, 102, 241, 0.18);
   color: var(--text-muted);
-  transition: border-color 0.2s var(--ease-smooth), color 0.2s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+  transition: border-color 0.25s, color 0.25s, transform 0.25s var(--ease-bounce), background 0.25s, box-shadow 0.25s;
+  backdrop-filter: blur(6px);
 }
 
 .socialIcon:hover {
-  border-color: var(--lime);
-  color: var(--lime);
-  transform: translateY(-2px);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(34, 211, 238, 0.08);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 10px 28px rgba(34, 211, 238, 0.2);
 }

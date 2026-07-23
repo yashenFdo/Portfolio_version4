@@ -8,7 +8,8 @@ export const profile = {
     'Researching across software engineering, drone technology, and green computing.',
     'Part of 60+ university events — leading the team on most of them.',
   ],
-  resumeUrl: 'https://www.linkedin.com/in/yashenfernando/',
+  // Update this link to point to your actual PDF resume (e.g., '/resume.pdf' or a Google Drive link)
+  resumeUrl: 'https://flowcv.com/resume/ac3decfjom30',
 };
 
 export const socialsMain = [
@@ -45,9 +46,9 @@ export const quickNav = [
   { id: 'experience', eyebrow: 'Work', title: 'Experience' },
   { id: 'education', eyebrow: 'Background', title: 'Education' },
   { id: 'research', eyebrow: 'Publications', title: 'Research' },
+  { id: 'writing', eyebrow: 'Notes', title: 'Writing' },
   { id: 'projects', eyebrow: 'Builds', title: 'Projects' },
   { id: 'volunteering', eyebrow: 'Community', title: 'Volunteering' },
-  { id: 'writing', eyebrow: 'Notes', title: 'Writing' },
 ];
 
 export const about = {
@@ -193,7 +194,8 @@ export const research = [
 ];
 
 export const posts = [
-  { title: 'JRE | JVM | JDK',
+  {
+    title: 'JRE | JVM | JDK',
     excerpt: 'Java Development Kit (JDK), Java Runtime Environment (JRE), and Java Virtual Machine (JVM) are all key components of the Java programming language.',
     platform: 'Medium',
     topic: 'Programming',
@@ -203,7 +205,8 @@ export const posts = [
     slug: 'a1',
     image: '/blogs/a1.png'
   },
-  { title: 'Virtualization and Virtual Machines',
+  {
+    title: 'Virtualization and Virtual Machines',
     excerpt: 'In today’s rapidly evolving technological landscape, virtualization has emerged as a powerful tool that allows us to run multiple operating systems and applications on a single physical machine.',
     platform: 'Medium',
     topic: 'DevOps',
@@ -213,7 +216,8 @@ export const posts = [
     slug: 'a2',
     image: '/blogs/a2.jpg'
   },
-  { title: 'Docker container vs. Virtual Machines',
+  {
+    title: 'Docker container vs. Virtual Machines',
     excerpt: 'Welcome back, homies! Where I delve into the differences between Docker and virtual machines (VMs). If you’re curious about virtualization, feel free to check out my previous post on the topic.',
     platform: 'Medium',
     topic: 'DevOps',
@@ -223,7 +227,8 @@ export const posts = [
     slug: 'a3',
     image: '/blogs/a3.jpg'
   },
-  { title: 'Arrays and ArrayList in Java.',
+  {
+    title: 'Arrays and ArrayList in Java.',
     excerpt: 'Arrays and ArrayList are fundamental data structures in Java that allow you to store and manipulate collections of elements. While arrays are a basic construct, ArrayList offer more flexibility and convenience.',
     platform: 'Medium',
     topic: 'Programming',
@@ -233,7 +238,8 @@ export const posts = [
     slug: 'a4',
     image: '/blogs/a4.png'
   },
-  { title: 'Getting Started with Client-Server',
+  {
+    title: 'Getting Started with Client-Server',
     excerpt: 'If you’re into IT, you’re likely familiar with servers. Servers play a crucial role in providing various services, such as web and mail services.',
     platform: 'Medium',
     topic: 'Networking',
@@ -243,7 +249,8 @@ export const posts = [
     slug: 'a5',
     image: '/blogs/a5.jpg'
   },
-  { title: 'Navigating the Coding Landscape',
+  {
+    title: 'Navigating the Coding Landscape',
     excerpt: 'Let’s delve into MVC, which stands for Model, View, and Controller. You likely have a basic idea about what a view is, right? In mobile apps, web apps, and desktop apps, the user interface is what you interact with — buttons, data input, text and image display, video playback.',
     platform: 'Medium',
     topic: 'Software Engineering',
@@ -253,7 +260,8 @@ export const posts = [
     slug: 'a6',
     image: '/blogs/a6.jpg'
   },
-  { title: 'What is Data Science?',
+  {
+    title: 'What is Data Science?',
     excerpt: 'Most people have no idea about Data Science. But we all know about physical science, biological science, and chemical science because they are traditional subjects. ',
     platform: 'Medium',
     topic: 'Data Science',
@@ -263,7 +271,8 @@ export const posts = [
     slug: 'a7',
     image: '/blogs/a7.png'
   },
-  { title: 'Why I Stopped Using Double in My Spring Boot Projects',
+  {
+    title: 'Why I Stopped Using Double in My Spring Boot Projects',
     excerpt: 'When I started building my Daraz clone using Spring Boot, I spent a lot of time looking through professional GitHub repositories to see how experienced developers structure their projects. ',
     platform: 'Medium',
     topic: 'Software Engineering',
@@ -281,7 +290,7 @@ export const projects = {
     title: 'GridShift - Carbon-Aware Kubernetes Scheduler',
     dates: 'Oct 2026 — Mar 2027',
     description:
-        'A Kubernetes operator that schedules batch workloads against grid carbon intensity forecasts, shifting jobs into low-emission windows without missing deadlines. Evaluated on four years of Sri Lankan hydro-thermal grid data.',
+      'A Kubernetes operator that schedules batch workloads against grid carbon intensity forecasts, shifting jobs into low-emission windows without missing deadlines. Evaluated on four years of Sri Lankan hydro-thermal grid data.',
     tags: ['Kubernetes', 'Go', 'Docker', 'Green Computing'],
     image: '/projects/fyp.jpg',
     codeUrl: 'https://github.com/yashenFdo/',

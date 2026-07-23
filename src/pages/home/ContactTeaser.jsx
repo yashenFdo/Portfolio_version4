@@ -1,4 +1,4 @@
-import Reveal from '../../components/Reveal';
+import Reveal3D from '../../components/Reveal3D';
 import { contact, socialsContact } from '../../data/content';
 import { SOCIAL_ICONS, WhatsAppIcon, CalendarIcon, PinIcon, PhoneIcon, EmailIcon } from '../../components/Icons';
 import shared from './shared.module.css';
@@ -7,10 +7,19 @@ import styles from './ContactTeaser.module.css';
 export default function ContactTeaser() {
   return (
     <section id="contact" className={styles.section}>
-      <Reveal className={styles.inner}>
-        <h2 className={shared.sectionTitle} style={{ textAlign: 'center' }}>
-          Get In Touch
+      <Reveal3D className={styles.inner}>
+        {/* Decorative glow ring */}
+        <div className={styles.glowRing} aria-hidden="true" />
+
+        <div className={styles.eyebrowRow}>
+          <div className={shared.eyebrow}>Contact</div>
+        </div>
+
+        <h2 className={styles.heading}>
+          Say Hii...{' '}
+          <span className={styles.headingAccent}>Let&apos;s talk</span>
         </h2>
+
         <p className={styles.subtitle}>
           Have a project, a research idea, or just want to talk shop? My inbox is open.
         </p>
@@ -31,13 +40,13 @@ export default function ContactTeaser() {
 
         <div className={styles.pillRow}>
           <a className={styles.pill} href={`mailto:${contact.email}`}>
-            <EmailIcon width={16} height={16} /> {contact.email}
+            <EmailIcon width={15} height={15} /> {contact.email}
           </a>
           <a className={styles.pill} href={`tel:${contact.phone.replace(/\s+/g, '')}`}>
-            <PhoneIcon width={16} height={16} /> {contact.phone}
+            <PhoneIcon width={15} height={15} /> {contact.phone}
           </a>
           <span className={styles.pillStatic}>
-            <PinIcon width={16} height={16} /> {contact.location}
+            <PinIcon width={15} height={15} /> {contact.location}
           </span>
         </div>
 
@@ -45,13 +54,20 @@ export default function ContactTeaser() {
           {socialsContact.map((s) => {
             const Icon = SOCIAL_ICONS[s.key];
             return (
-              <a key={s.key} className={styles.socialIcon} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
+              <a
+                key={s.key}
+                className={styles.socialIcon}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+              >
                 <Icon />
               </a>
             );
           })}
         </div>
-      </Reveal>
+      </Reveal3D>
     </section>
   );
 }
